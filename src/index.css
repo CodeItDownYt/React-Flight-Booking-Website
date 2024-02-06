@@ -1,0 +1,107 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+	font-family: "Roboto", sans-serif;
+}
+
+body {
+	font-family: "Roboto", sans-serif;
+	margin: 0;
+	padding: 0;
+	min-height: 100vh;
+	background-color: #fff;
+}
+
+.hero::before {
+	content: "";
+	background-image: url("./assets/images/abs.png");
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	z-index: -1;
+	opacity: 0.09;
+}
+
+.hero .left-animation {
+	animation: leftAnimation 1s ease-in-out;
+}
+.hero .right-animation {
+	animation: rightAnimation 1s ease-in-out;
+}
+
+.plane-mask::before {
+	position: absolute;
+	content: "";
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-image: url("./assets/images/wallpaper.jpg");
+	background-size: 100% 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	mix-blend-mode: screen;
+}
+
+.banner::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	opacity: 0.6;
+	z-index: -1;
+}
+
+@keyframes leftAnimation {
+	0% {
+		margin-left: -50px;
+		opacity: 0;
+	}
+
+	100% {
+		margin-left: 0px;
+		opacity: 1;
+	}
+}
+@keyframes rightAnimation {
+	0% {
+		margin-right: -50px;
+		opacity: 0;
+	}
+
+	100% {
+		margin-right: 0px;
+		opacity: 1;
+	}
+}
+
+/* width */
+::-webkit-scrollbar {
+	width: 10px;
+	height: 10px;
+	background: rgba(196, 196, 196, 0.1);
+	border-radius: 4px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	border-radius: 4px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: rgb(96, 165, 250);
+	border-radius: 4px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: rgb(72, 132, 204);
+}
